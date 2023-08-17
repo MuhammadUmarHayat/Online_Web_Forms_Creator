@@ -1,0 +1,29 @@
+(
+    SELECT `id`, `category`, `question`, `questionType`, `option1`, `option2`, `option3`, `option4`
+    FROM `questions`
+    WHERE `questionType` = 'mcq'
+    LIMIT 3
+)
+UNION ALL
+(
+    SELECT `id`, `category`, `question`, `questionType`, `option1`, `option2`, `option3`, `option4`
+    FROM `questions`
+    WHERE `questionType` = 'short'
+    LIMIT 2
+)
+UNION ALL
+(
+    SELECT `id`, `category`, `question`, `questionType`, `option1`, `option2`, `option3`, `option4`
+    FROM `questions`
+    WHERE `questionType` = 'long'
+    LIMIT 2
+)
+UNION ALL
+(
+    SELECT `id`, `category`, `question`, `questionType`, `option1`, `option2`, `option3`, `option4`
+    FROM `questions`
+    WHERE `questionType` = 'multi'
+    LIMIT 3
+);
+
+SELECT * FROM `generated_forms` ORDER BY id DESC LIMIT 1
